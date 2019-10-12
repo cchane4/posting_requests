@@ -15,9 +15,10 @@ app.get("/friends", (req, res) => {
     res.render('friends', {friends_listing: friend}); 
 }); 
 
-/* the input from the form is taken in as a request with a name attribute, 
- the body of the request is parsed into a javascript object 
- with a key/value pair, that name taken from the req.body and stored in the 
+/* the input from the form is taken in as a request with a name attribute
+which we set the value to be newfriend is how the data is added to the req.body, 
+ the body of the request is parsed into a javascript object (made of key/value pairs) via bodyParser and then we tell our app to use it 
+ using the app.use function.  the value of the name attribute is  taken from the req.body and stored in the 
  variable new_friend, it is then pushed into the friend array and seen on the page 
  as html, we then redirect which takes a url and trigger that route again and run all the code inside the 
  /friends route */ 
